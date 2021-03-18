@@ -14,7 +14,7 @@
     $cnx = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
    
     //Construir la sentencia sql
-    $sql = "INSERT INTO Doctor (Id, Name, Consulting_room, Turnos) VALUES (NULL, '$name', '$consulting_room', '$turnos')";
+    $sql = "INSERT INTO Doctor (Doctor_id, Name, Consulting_room, Turnos) VALUES (NULL, '$name', '$consulting_room', '$turnos')";
 
     //Prepara la sentencia SQL
     $q = $cnx->prepare($sql);

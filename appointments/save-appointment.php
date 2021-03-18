@@ -1,6 +1,6 @@
 <?php
 
-    $doctor = $_REQUEST["Doctor"];
+    $doctor_id = $_REQUEST["Doctor"];
     $pet= $_REQUEST["Pet"];
     $time = $_REQUEST["Time"];
 
@@ -14,7 +14,7 @@
     $cnx = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
    
     //Construir la sentencia sql
-    $sql = "INSERT INTO appointments (Id, Doctor, Pet, Time) VALUES (NULL, '$doctor', '$Pet', '$time')";
+    $sql = "INSERT INTO appointments (Id, Doctor_id, Pet, Time) VALUES (NULL, '$doctor_id', '$pet', '$time')";
 
     //Prepara la sentencia SQL
     $q = $cnx->prepare($sql);

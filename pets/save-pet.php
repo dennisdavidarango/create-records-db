@@ -4,6 +4,7 @@
     $race = $_REQUEST["Race"];
     $gender = $_REQUEST["Gender"];
     $tipo = $_REQUEST["Tipo"];
+    $doctor_id = $_REQUEST["Doctor_id"];
     
 
     //Conexión a la base de datos
@@ -16,7 +17,7 @@
     $cnx = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
    
     //Construir la sentencia sql
-    $sql = "INSERT INTO Pet (Id, Name, Race,  Gender, Tipo) VALUES (NULL, '$name', '$race', '$gender', '$tipo')";
+    $sql = "INSERT INTO Pet (Id, Name, Race,  Gender, Tipo, Doctor_id) VALUES (NULL, '$name', '$race', '$gender', '$tipo', '$doctor_id')";
 
     //Prepara la sentencia SQL
     $q = $cnx->prepare($sql);

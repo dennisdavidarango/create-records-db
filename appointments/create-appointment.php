@@ -4,8 +4,6 @@
     $consulting_room_id= $_REQUEST["consulting_room_id"];
     $Time = $_REQUEST["Time"];
 
-    
-
     //Conexión a la base de datos
 
     $host = "localhost";
@@ -16,7 +14,7 @@
     $cnx = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
    
     //Construir la sentencia sql
-    $sql = "SELECT Id, Name FROM Doctor";
+    $sql = "SELECT Doctor_id, Name FROM Doctor";
     //Prepara la sentencia SQL
     $q = $cnx->prepare($sql);
     // Ejecutar sentencia SQL
@@ -48,11 +46,11 @@
 
     <form action="save-appointment.php" method = "POST">
         Doctor 
-        <select name="Doctor" >
+        <select name="Doctor">
         <?php
             for($i=0; $i<count($doctors); $i++){
         ?>
-        <option value="<?php echo $doctors[$i]["Id"] ?>"> <?php echo $doctors[$i]["Name"] ?> </option>
+        <option value="<?php echo $doctors[$i]["Doctor_id"] ?>"> <?php echo $doctors[$i]["Name"] ?> </option>
         <?php
             }
         ?>
